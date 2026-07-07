@@ -16,7 +16,8 @@ ENV PYTHONUNBUFFERED=1
 COPY --from=builder /app .
 
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install -r requirements.txt && \
+    chmod +x safe_migrate.sh
 
 EXPOSE 8080
 
